@@ -25,7 +25,7 @@ class BinanceSpot:
         self.ws_manager = BinanceWebSocketApiManager(exchange=exchange, throw_exception_if_unrepairable=True,
                                                      warn_on_update=False)
 
-        self.rest_manager = BinanceRestApiManager(self.api_key, api_secret=self.secret)
+        self.rest_manager = BinanceRestApiManager(self.api_key, api_secret=self.secret, exchange=exchange)
         self.exchange_information = None
         self.tick_symbols = []
 
