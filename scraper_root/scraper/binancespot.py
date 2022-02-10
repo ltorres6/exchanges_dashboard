@@ -240,10 +240,10 @@ class BinanceSpot:
                     locked = float(balance['locked'])
                     position_size = free + locked
                     if position_size > 0.0:
-                        if asset in ['USDT', 'BUSD']:
+                        if asset in ['USDT', 'BUSD', 'USD']:
                             total_usdt_wallet_balance += position_size
                         else:
-                            current_usd_prices = [p for p in current_prices if p['symbol'] in [f'{asset}USDT', f'{asset}BUSD']]
+                            current_usd_prices = [p for p in current_prices if p['symbol'] in [f'{asset}USDT', f'{asset}BUSD', f'{asset}USD']]
                             if len(current_usd_prices) > 0:
                                 asset_usd_balance = 0.0
                                 unrealized_profit = 0.0
